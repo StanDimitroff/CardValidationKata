@@ -11,6 +11,7 @@
 		440BC2CE2D943821000DEA5D /* CardValidatorCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2CD2D943821000DEA5D /* CardValidatorCoreTests.swift */; };
 		440BC2CF2D943821000DEA5D /* CardValidatorCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 440BC2C32D943821000DEA5D /* CardValidatorCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		440BC2D92D94388E000DEA5D /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2D82D94388E000DEA5D /* CardType.swift */; };
+		440BC2DB2D94398E000DEA5D /* CardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2DA2D94398E000DEA5D /* CardValidator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		440BC2C82D943821000DEA5D /* CardValidatorCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardValidatorCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		440BC2CD2D943821000DEA5D /* CardValidatorCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidatorCoreTests.swift; sourceTree = "<group>"; };
 		440BC2D82D94388E000DEA5D /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
+		440BC2DA2D94398E000DEA5D /* CardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		440BC2C22D943821000DEA5D /* CardValidatorCore */ = {
 			isa = PBXGroup;
 			children = (
+				440BC2DA2D94398E000DEA5D /* CardValidator.swift */,
 				440BC2C32D943821000DEA5D /* CardValidatorCore.h */,
 				440BC2D82D94388E000DEA5D /* CardType.swift */,
 			);
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440BC2DB2D94398E000DEA5D /* CardValidator.swift in Sources */,
 				440BC2D92D94388E000DEA5D /* CardType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
