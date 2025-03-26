@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		440BC2C92D943821000DEA5D /* CardValidatorCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440BC2C02D943821000DEA5D /* CardValidatorCore.framework */; };
-		440BC2CE2D943821000DEA5D /* CardValidatorCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2CD2D943821000DEA5D /* CardValidatorCoreTests.swift */; };
 		440BC2CF2D943821000DEA5D /* CardValidatorCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 440BC2C32D943821000DEA5D /* CardValidatorCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		440BC2D92D94388E000DEA5D /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2D82D94388E000DEA5D /* CardType.swift */; };
 		440BC2DB2D94398E000DEA5D /* CardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2DA2D94398E000DEA5D /* CardValidator.swift */; };
+		440BC2DD2D943BD8000DEA5D /* RegexCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2DC2D943BD8000DEA5D /* RegexCardValidator.swift */; };
+		440BC2E02D943C46000DEA5D /* RegexCardValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2DF2D943C46000DEA5D /* RegexCardValidatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +29,11 @@
 		440BC2C02D943821000DEA5D /* CardValidatorCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CardValidatorCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		440BC2C32D943821000DEA5D /* CardValidatorCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardValidatorCore.h; sourceTree = "<group>"; };
 		440BC2C82D943821000DEA5D /* CardValidatorCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardValidatorCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		440BC2CD2D943821000DEA5D /* CardValidatorCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidatorCoreTests.swift; sourceTree = "<group>"; };
 		440BC2D82D94388E000DEA5D /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
 		440BC2DA2D94398E000DEA5D /* CardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidator.swift; sourceTree = "<group>"; };
+		440BC2DC2D943BD8000DEA5D /* RegexCardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexCardValidator.swift; sourceTree = "<group>"; };
+		440BC2DE2D943C45000DEA5D /* CardValidatorCoreTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardValidatorCoreTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		440BC2DF2D943C46000DEA5D /* RegexCardValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexCardValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 				440BC2DA2D94398E000DEA5D /* CardValidator.swift */,
 				440BC2C32D943821000DEA5D /* CardValidatorCore.h */,
 				440BC2D82D94388E000DEA5D /* CardType.swift */,
+				440BC2DC2D943BD8000DEA5D /* RegexCardValidator.swift */,
 			);
 			path = CardValidatorCore;
 			sourceTree = "<group>";
@@ -83,7 +87,8 @@
 		440BC2CC2D943821000DEA5D /* CardValidatorCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				440BC2CD2D943821000DEA5D /* CardValidatorCoreTests.swift */,
+				440BC2DF2D943C46000DEA5D /* RegexCardValidatorTests.swift */,
+				440BC2DE2D943C45000DEA5D /* CardValidatorCoreTests-Bridging-Header.h */,
 			);
 			path = CardValidatorCoreTests;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 					};
 					440BC2C72D943821000DEA5D = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -200,6 +206,7 @@
 			files = (
 				440BC2DB2D94398E000DEA5D /* CardValidator.swift in Sources */,
 				440BC2D92D94388E000DEA5D /* CardType.swift in Sources */,
+				440BC2DD2D943BD8000DEA5D /* RegexCardValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				440BC2CE2D943821000DEA5D /* CardValidatorCoreTests.swift in Sources */,
+				440BC2E02D943C46000DEA5D /* RegexCardValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NXZW7962A8;
@@ -427,6 +435,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.getset.CardValidatorCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "CardValidatorCoreTests/CardValidatorCoreTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -435,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NXZW7962A8;
@@ -443,6 +454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.getset.CardValidatorCoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "CardValidatorCoreTests/CardValidatorCoreTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

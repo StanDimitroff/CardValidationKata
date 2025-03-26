@@ -10,3 +10,8 @@ import Foundation
 public protocol CardValidator {
   func validate(cardNumber: String) throws -> CardType
 }
+
+
+public enum CardValidatorError: Error {
+  case missingCardNumber
+}
