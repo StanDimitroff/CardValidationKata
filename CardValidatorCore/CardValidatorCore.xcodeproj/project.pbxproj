@@ -13,6 +13,7 @@
 		440BC2DB2D94398E000DEA5D /* CardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2DA2D94398E000DEA5D /* CardValidator.swift */; };
 		440BC2DD2D943BD8000DEA5D /* RegexCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2DC2D943BD8000DEA5D /* RegexCardValidator.swift */; };
 		440BC2E02D943C46000DEA5D /* RegexCardValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2DF2D943C46000DEA5D /* RegexCardValidatorTests.swift */; };
+		440BC2E22D9469C7000DEA5D /* ValidateCardTypeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2E12D9469C7000DEA5D /* ValidateCardTypeUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		440BC2DC2D943BD8000DEA5D /* RegexCardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexCardValidator.swift; sourceTree = "<group>"; };
 		440BC2DE2D943C45000DEA5D /* CardValidatorCoreTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CardValidatorCoreTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		440BC2DF2D943C46000DEA5D /* RegexCardValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexCardValidatorTests.swift; sourceTree = "<group>"; };
+		440BC2E12D9469C7000DEA5D /* ValidateCardTypeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCardTypeUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				440BC2C32D943821000DEA5D /* CardValidatorCore.h */,
 				440BC2D82D94388E000DEA5D /* CardType.swift */,
 				440BC2DC2D943BD8000DEA5D /* RegexCardValidator.swift */,
+				440BC2E12D9469C7000DEA5D /* ValidateCardTypeUseCase.swift */,
 			);
 			path = CardValidatorCore;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				440BC2DB2D94398E000DEA5D /* CardValidator.swift in Sources */,
 				440BC2D92D94388E000DEA5D /* CardType.swift in Sources */,
 				440BC2DD2D943BD8000DEA5D /* RegexCardValidator.swift in Sources */,
+				440BC2E22D9469C7000DEA5D /* ValidateCardTypeUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
