@@ -38,6 +38,12 @@ final class RegexCardValidatorTests: XCTestCase {
     XCTAssertEqual(validationError, CardValidatorError.invalidCharacters)
   }
 
+  func test_validate_doesNotThrowErrorOnValidationSuccess() {
+    let sut = makeSUT()
+
+    XCTAssertNoThrow(try sut.validate(cardNumber: "4543474002249996"))
+  }
+
   private func makeSUT() -> CardValidator {
     RegexCardValidator()
   }
