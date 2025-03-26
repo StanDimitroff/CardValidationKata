@@ -16,10 +16,19 @@
 		440BC2E22D9469C7000DEA5D /* ValidateCardTypeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2E12D9469C7000DEA5D /* ValidateCardTypeUseCase.swift */; };
 		440BC2EB2D946B76000DEA5D /* CardValidatoriOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 440BC2EA2D946B76000DEA5D /* CardValidatoriOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		440BC2F02D946BA8000DEA5D /* ValidateCardTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2EF2D946BA8000DEA5D /* ValidateCardTypeView.swift */; };
+		440BC2F22D946C59000DEA5D /* ValidateCardTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2F12D946C59000DEA5D /* ValidateCardTypeViewModel.swift */; };
+		440BC2F42D946D7A000DEA5D /* CardValidatorCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440BC2C02D943821000DEA5D /* CardValidatorCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		440BC2CA2D943821000DEA5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 440BC2B72D943821000DEA5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 440BC2BF2D943821000DEA5D;
+			remoteInfo = CardValidatorCore;
+		};
+		440BC2F62D946D7A000DEA5D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 440BC2B72D943821000DEA5D /* Project object */;
 			proxyType = 1;
@@ -41,6 +50,7 @@
 		440BC2E82D946B76000DEA5D /* CardValidatoriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CardValidatoriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		440BC2EA2D946B76000DEA5D /* CardValidatoriOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardValidatoriOS.h; sourceTree = "<group>"; };
 		440BC2EF2D946BA8000DEA5D /* ValidateCardTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCardTypeView.swift; sourceTree = "<group>"; };
+		440BC2F12D946C59000DEA5D /* ValidateCardTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCardTypeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440BC2F42D946D7A000DEA5D /* CardValidatorCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +87,7 @@
 				440BC2CC2D943821000DEA5D /* CardValidatorCoreTests */,
 				440BC2E92D946B76000DEA5D /* CardValidatoriOS */,
 				440BC2C12D943821000DEA5D /* Products */,
+				440BC2F32D946D7A000DEA5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +109,7 @@
 				440BC2D82D94388E000DEA5D /* CardType.swift */,
 				440BC2DC2D943BD8000DEA5D /* RegexCardValidator.swift */,
 				440BC2E12D9469C7000DEA5D /* ValidateCardTypeUseCase.swift */,
+				440BC2F12D946C59000DEA5D /* ValidateCardTypeViewModel.swift */,
 			);
 			path = CardValidatorCore;
 			sourceTree = "<group>";
@@ -117,6 +130,13 @@
 				440BC2EF2D946BA8000DEA5D /* ValidateCardTypeView.swift */,
 			);
 			path = CardValidatoriOS;
+			sourceTree = "<group>";
+		};
+		440BC2F32D946D7A000DEA5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +209,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				440BC2F72D946D7A000DEA5D /* PBXTargetDependency */,
 			);
 			name = CardValidatoriOS;
 			productName = CardValidatoriOS;
@@ -268,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440BC2F22D946C59000DEA5D /* ValidateCardTypeViewModel.swift in Sources */,
 				440BC2DB2D94398E000DEA5D /* CardValidator.swift in Sources */,
 				440BC2D92D94388E000DEA5D /* CardType.swift in Sources */,
 				440BC2DD2D943BD8000DEA5D /* RegexCardValidator.swift in Sources */,
@@ -298,6 +320,11 @@
 			isa = PBXTargetDependency;
 			target = 440BC2BF2D943821000DEA5D /* CardValidatorCore */;
 			targetProxy = 440BC2CA2D943821000DEA5D /* PBXContainerItemProxy */;
+		};
+		440BC2F72D946D7A000DEA5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 440BC2BF2D943821000DEA5D /* CardValidatorCore */;
+			targetProxy = 440BC2F62D946D7A000DEA5D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -454,6 +481,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.getset.CardValidatorCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -489,6 +517,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.getset.CardValidatorCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
