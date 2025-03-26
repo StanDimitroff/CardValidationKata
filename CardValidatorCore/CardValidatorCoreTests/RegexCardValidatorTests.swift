@@ -13,13 +13,29 @@ final class RegexCardValidatorTests: XCTestCase {
   func test_validate_throwsMissingCardNumberErrorOnEmptyCardNumber() {
     let sut = makeSUT()
 
-    XCTAssertThrowsError(try sut.validate(cardNumber: ""))
+    var validationError: CardValidatorError?
+
+    do {
+      try _ = sut.validate(cardNumber: "")
+    } catch {
+      validationError = error as? CardValidatorError
+    }
+
+    XCTAssertEqual(validationError, CardValidatorError.missingCardNumber)
   }
 
   func test_validate_throwsInvalidCharactersErrorOnNonDigitCardNumber() {
     let sut = makeSUT()
 
-    XCTAssertThrowsError(try sut.validate(cardNumber: "no-digit card number"))
+    var validationError: CardValidatorError?
+
+    do {
+      try _ = sut.validate(cardNumber: "no-digit card number")
+    } catch {
+      validationError = error as? CardValidatorError
+    }
+
+    XCTAssertEqual(validationError, CardValidatorError.invalidCharacters)
   }
 
   private func makeSUT() -> CardValidator {
