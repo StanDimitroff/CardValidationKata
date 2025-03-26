@@ -27,7 +27,7 @@ extension ValidateCardTypeView {
     var body: some View {
       VStack(alignment: .leading, spacing: 16) {
         HStack {
-          TextField("", text: cardNumber)
+          TextField("", text: cardNumber, prompt: Text("Type your card number"))
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .keyboardType(.numberPad)
           Text(cardType)
