@@ -8,14 +8,27 @@
 import SwiftUI
 
 extension ValidateCardTypeView {
-  
   struct Content: View {
+
+    private let cardNumber: Binding<String>
+    private let validateCardType: () -> Void
+
+    init(
+      cardNumber: Binding<String>,
+      validateCardType: @escaping () -> Void = {}
+    ) {
+      self.cardNumber = cardNumber
+      self.validateCardType = validateCardType
+    }
+
     var body: some View {
-      Text("Hello, World!")
+      VStack {
+        TextField("", text: cardNumber)
+      }
     }
   }
 }
 
 #Preview {
-  ValidateCardTypeView.Content()
+  ValidateCardTypeView.Content(cardNumber: .constant("1234"))
 }
