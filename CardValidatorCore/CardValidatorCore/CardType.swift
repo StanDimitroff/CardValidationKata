@@ -7,14 +7,14 @@
 
 import Foundation
 
-public enum CardType {
+public enum CardType: CaseIterable {
   case unknown
   case americanExpress
   case discover
   case mastercard
   case visa
 
-  var regexPattern: String? {
+  public var regexPattern: String? {
     switch self {
     case .unknown:
       return nil

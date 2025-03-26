@@ -16,7 +16,16 @@ public final class RegexCardValidator: CardValidator {
 
     guard containsDigitsOnly(in: cardNumber) else { throw CardValidatorError.invalidCharacters }
 
-    return .unknown
+    let range = NSRange(location: 0, length: cardNumber.utf16.count)
+
+    let matchedCardType = CardType.allCases.first { type in
+      guard let pattern = type.regexPattern else { return false }
+      let expression = try? NSRegularExpression(pattern: pattern)
+
+      return expression?.firstMatch(in: cardNumber, options: [], range: range) != nil
+    }
+
+    return matchedCardType ?? .unknown
   }
 
   private func containsDigitsOnly(in string: String) -> Bool {
