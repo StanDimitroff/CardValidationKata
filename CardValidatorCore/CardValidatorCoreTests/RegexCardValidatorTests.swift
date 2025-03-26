@@ -56,19 +56,19 @@ final class RegexCardValidatorTests: XCTestCase {
     XCTAssertEqual(cardType, .unknown)
   }
 
-  func test_validate_returnsValidCardTypeOnValidCardNumber() {
+  func test_validate_returnsValidCardTypeOnValidCardNumber() throws {
     let sut = makeSUT()
 
-    let amexType = try? sut.validate(cardNumber: "345678901234564")
+    let amexType = try sut.validate(cardNumber: "345678901234564")
     XCTAssertEqual(amexType, .americanExpress)
 
-    let discoverType = try? sut.validate(cardNumber: "6011201559638046790")
+    let discoverType = try sut.validate(cardNumber: "6011201559638046790")
     XCTAssertEqual(discoverType, .discover)
 
-    let mastercardType = try? sut.validate(cardNumber: "5436031030606378")
+    let mastercardType = try sut.validate(cardNumber: "5436031030606378")
     XCTAssertEqual(mastercardType, .mastercard)
 
-    let visaType = try? sut.validate(cardNumber: "4916301720257093")
+    let visaType = try sut.validate(cardNumber: "4916301720257093")
     XCTAssertEqual(visaType, .visa)
   }
 

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		440BC3082D9476DB000DEA5D /* CardValidatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC3072D9476DB000DEA5D /* CardValidatorApp.swift */; };
-		440BC30A2D9476DB000DEA5D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC3092D9476DB000DEA5D /* ContentView.swift */; };
 		440BC30C2D9476DC000DEA5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440BC30B2D9476DC000DEA5D /* Assets.xcassets */; };
 		440BC30F2D9476DC000DEA5D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440BC30E2D9476DC000DEA5D /* Preview Assets.xcassets */; };
 		440BC3172D94776F000DEA5D /* CardValidatorCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440BC3162D94776F000DEA5D /* CardValidatorCore.framework */; };
@@ -35,7 +34,6 @@
 /* Begin PBXFileReference section */
 		440BC3042D9476DB000DEA5D /* CardValidatorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardValidatorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		440BC3072D9476DB000DEA5D /* CardValidatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidatorApp.swift; sourceTree = "<group>"; };
-		440BC3092D9476DB000DEA5D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		440BC30B2D9476DC000DEA5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		440BC30E2D9476DC000DEA5D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		440BC3162D94776F000DEA5D /* CardValidatorCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CardValidatorCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				440BC3072D9476DB000DEA5D /* CardValidatorApp.swift */,
-				440BC3092D9476DB000DEA5D /* ContentView.swift */,
 				440BC30B2D9476DC000DEA5D /* Assets.xcassets */,
 				440BC30D2D9476DC000DEA5D /* Preview Content */,
 			);
@@ -171,7 +168,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				440BC30A2D9476DB000DEA5D /* ContentView.swift in Sources */,
 				440BC3082D9476DB000DEA5D /* CardValidatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
