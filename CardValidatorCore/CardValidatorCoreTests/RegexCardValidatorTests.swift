@@ -10,6 +10,8 @@ import CardValidatorCore
 
 final class RegexCardValidatorTests: XCTestCase {
 
+  // MARK: - Sad path
+
   func test_validate_throwsMissingCardNumberErrorOnEmptyCardNumber() {
     let sut = makeSUT()
 
@@ -38,10 +40,20 @@ final class RegexCardValidatorTests: XCTestCase {
     XCTAssertEqual(validationError, CardValidatorError.invalidCharacters)
   }
 
+  // MARK: - Happy path
+
   func test_validate_doesNotThrowErrorOnValidationSuccess() {
     let sut = makeSUT()
 
     XCTAssertNoThrow(try sut.validate(cardNumber: "4543474002249996"))
+  }
+
+  func test_validate_returnsUnknownCardTypeOnCardNumberWithNotdefinedCardType() {
+    let sut = makeSUT()
+
+    let cardType = try? sut.validate(cardNumber: "111111111111")
+
+    XCTAssertEqual(cardType, .unknown)
   }
 
   private func makeSUT() -> CardValidator {
