@@ -17,10 +17,6 @@ public struct ValidateCardTypeView: View {
   }
 
   public var body: some View {
-    Text("Hello, World!")
+    Content()
   }
 }
-
-//#Preview {
-//  ValidateCardTypeView()
-//}
