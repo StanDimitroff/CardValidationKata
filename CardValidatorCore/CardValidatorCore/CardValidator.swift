@@ -14,4 +14,5 @@ public protocol CardValidator {
 
 public enum CardValidatorError: Error {
   case missingCardNumber
+  case invalidCharacters
 }

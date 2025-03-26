@@ -16,6 +16,12 @@ final class RegexCardValidatorTests: XCTestCase {
     XCTAssertThrowsError(try sut.validate(cardNumber: ""))
   }
 
+  func test_validate_throwsInvalidCharactersErrorOnNonDigitCardNumber() {
+    let sut = makeSUT()
+
+    XCTAssertThrowsError(try sut.validate(cardNumber: "no-digit card number"))
+  }
+
   private func makeSUT() -> CardValidator {
     RegexCardValidator()
   }
