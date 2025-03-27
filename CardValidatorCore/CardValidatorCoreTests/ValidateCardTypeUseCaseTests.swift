@@ -26,7 +26,17 @@ final class ValidateCardTypeUseCaseTests: XCTestCase {
     XCTAssertNoThrow(try sut.getCardType(checking: anyCardNumber()))
   }
 
+  func test_getCardType_deliversTheCorrectCardTypeOnCardValidatorSuccessWithCardType() throws {
+    let (sut, validator) = makeSUT()
 
+    let expectedCardType = anyCardType()
+
+    validator.stub(error: nil, cardType: expectedCardType)
+
+    let receivedCardType = try sut.getCardType(checking: anyCardNumber())
+
+    XCTAssertEqual(receivedCardType, expectedCardType)
+  }
 
   private func makeSUT() -> (sut: ValidateCardTypeUseCase, validator: CardValidatorStub)  {
     let cardValidator = CardValidatorStub()
@@ -36,7 +46,7 @@ final class ValidateCardTypeUseCaseTests: XCTestCase {
   }
 
   private class CardValidatorStub: CardValidator {
-    
+
     struct Stub {
       let error: Error?
       let cardType: CardType?
@@ -53,13 +63,24 @@ final class ValidateCardTypeUseCaseTests: XCTestCase {
         throw error
       }
 
+      if let cardType = stub?.cardType {
+        return cardType
+      }
+
       return .unknown
     }
   }
 
-
   private func anyNSError() -> NSError {
     NSError(domain: "Any error", code: 0)
+  }
+
+  private func anyCardNumber() -> String {
+    "4543474002249996"
+  }
+
+  private func anyCardType() -> CardType {
+    CardType.allCases.randomElement()!
   }
 }
 
