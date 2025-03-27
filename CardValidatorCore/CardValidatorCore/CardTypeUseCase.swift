@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+public protocol CardTypeUseCase {
+  func getCardType(checking cardNumber: String) throws -> CardType
+}

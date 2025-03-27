@@ -21,6 +21,9 @@
 		440BC2FA2D946F2D000DEA5D /* ValidateCardTypeView.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2F92D946F2D000DEA5D /* ValidateCardTypeView.Content.swift */; };
 		440BC3352D956253000DEA5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440BC3342D956253000DEA5D /* Images.xcassets */; };
 		440BC3372D956B41000DEA5D /* ValidateCardTypeUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC3362D956B41000DEA5D /* ValidateCardTypeUseCaseTests.swift */; };
+		440BC3392D957D9E000DEA5D /* CardTypeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC3382D957D9E000DEA5D /* CardTypeUseCase.swift */; };
+		440BC33B2D957E4E000DEA5D /* ValidateCardTypeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC33A2D957E4E000DEA5D /* ValidateCardTypeViewModelTests.swift */; };
+		440BC33E2D958207000DEA5D /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC33D2D958207000DEA5D /* SharedTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		440BC2F92D946F2D000DEA5D /* ValidateCardTypeView.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCardTypeView.Content.swift; sourceTree = "<group>"; };
 		440BC3342D956253000DEA5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		440BC3362D956B41000DEA5D /* ValidateCardTypeUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCardTypeUseCaseTests.swift; sourceTree = "<group>"; };
+		440BC3382D957D9E000DEA5D /* CardTypeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypeUseCase.swift; sourceTree = "<group>"; };
+		440BC33A2D957E4E000DEA5D /* ValidateCardTypeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCardTypeViewModelTests.swift; sourceTree = "<group>"; };
+		440BC33D2D958207000DEA5D /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 				440BC2DC2D943BD8000DEA5D /* RegexCardValidator.swift */,
 				440BC2E12D9469C7000DEA5D /* ValidateCardTypeUseCase.swift */,
 				440BC2F12D946C59000DEA5D /* ValidateCardTypeViewModel.swift */,
+				440BC3382D957D9E000DEA5D /* CardTypeUseCase.swift */,
 			);
 			path = CardValidatorCore;
 			sourceTree = "<group>";
@@ -123,9 +130,11 @@
 		440BC2CC2D943821000DEA5D /* CardValidatorCoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				440BC33C2D9581F3000DEA5D /* Helpers */,
 				440BC2DF2D943C46000DEA5D /* RegexCardValidatorTests.swift */,
-				440BC2DE2D943C45000DEA5D /* CardValidatorCoreTests-Bridging-Header.h */,
 				440BC3362D956B41000DEA5D /* ValidateCardTypeUseCaseTests.swift */,
+				440BC33A2D957E4E000DEA5D /* ValidateCardTypeViewModelTests.swift */,
+				440BC2DE2D943C45000DEA5D /* CardValidatorCoreTests-Bridging-Header.h */,
 			);
 			path = CardValidatorCoreTests;
 			sourceTree = "<group>";
@@ -146,6 +155,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		440BC33C2D9581F3000DEA5D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				440BC33D2D958207000DEA5D /* SharedTestHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				440BC2F22D946C59000DEA5D /* ValidateCardTypeViewModel.swift in Sources */,
+				440BC3392D957D9E000DEA5D /* CardTypeUseCase.swift in Sources */,
 				440BC2DB2D94398E000DEA5D /* CardValidator.swift in Sources */,
 				440BC2D92D94388E000DEA5D /* CardType.swift in Sources */,
 				440BC2DD2D943BD8000DEA5D /* RegexCardValidator.swift in Sources */,
@@ -311,6 +329,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440BC33E2D958207000DEA5D /* SharedTestHelpers.swift in Sources */,
+				440BC33B2D957E4E000DEA5D /* ValidateCardTypeViewModelTests.swift in Sources */,
 				440BC2E02D943C46000DEA5D /* RegexCardValidatorTests.swift in Sources */,
 				440BC3372D956B41000DEA5D /* ValidateCardTypeUseCaseTests.swift in Sources */,
 			);

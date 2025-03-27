@@ -10,16 +10,17 @@ import Foundation
 @Observable
 public final class ValidateCardTypeViewModel {
 
-  private let useCase: ValidateCardTypeUseCase
+  private let useCase: CardTypeUseCase
 
   public var cardNumber: String = "" {
     didSet {
       validateCardType()
     }
   }
+
   private(set) public var cardType: CardTypePresentationModel?
 
-  public init(useCase: ValidateCardTypeUseCase) {
+  public init(useCase: CardTypeUseCase) {
     self.useCase = useCase
   }
 

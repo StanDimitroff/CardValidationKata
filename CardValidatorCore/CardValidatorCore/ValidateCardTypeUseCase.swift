@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class ValidateCardTypeUseCase {
+public final class ValidateCardTypeUseCase: CardTypeUseCase {
 
   private let cardValidator: CardValidator
 

@@ -68,7 +68,7 @@ final class ValidateCardTypeUseCaseTests: XCTestCase {
 
     private(set) var validateCallCount = 0
     private(set) var stub: Stub?
-    
+
     func stub(error: Error?, cardType: CardType?) {
       stub = Stub(error: error, cardType: cardType)
     }
@@ -87,17 +87,4 @@ final class ValidateCardTypeUseCaseTests: XCTestCase {
       return .unknown
     }
   }
-
-  private func anyNSError() -> NSError {
-    NSError(domain: "Any error", code: 0)
-  }
-
-  private func anyCardNumber() -> String {
-    "4543474002249996"
-  }
-
-  private func anyCardType() -> CardType {
-    CardType.allCases.randomElement()!
-  }
 }
-
