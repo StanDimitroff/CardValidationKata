@@ -18,6 +18,7 @@ public final class ValidateCardTypeViewModel {
     }
   }
 
+  private(set) public var validationError: Error?
   private(set) public var cardType: CardTypePresentationModel?
 
   public init(useCase: CardTypeUseCase) {
@@ -34,7 +35,7 @@ public final class ValidateCardTypeViewModel {
       let cardType = try useCase.getCardType(checking: cardNumber)
       self.cardType = cardType.toPresentationModel()
     } catch {
-
+      self.validationError = error
     }
   }
 }
