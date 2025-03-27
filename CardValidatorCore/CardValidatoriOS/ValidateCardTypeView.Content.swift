@@ -29,13 +29,18 @@ extension ValidateCardTypeView {
         HStack(alignment: .top) {
           VStack(alignment: .leading, spacing: 8) {
             TextField("", text: cardNumber, prompt: Text("Type your card number"))
-              .textFieldStyle(.roundedBorder)
               .keyboardType(.numberPad)
+              .multilineTextAlignment(.center)
+              .frame(height: 43)
+              .overlay(
+                RoundedRectangle(cornerRadius: 8).stroke(.black, lineWidth: 1)
+              )
 
             if let errorText {
               Text(errorText)
                 .font(.footnote)
                 .foregroundStyle(.red)
+                .padding(.leading, 4)
             }
           }
 
