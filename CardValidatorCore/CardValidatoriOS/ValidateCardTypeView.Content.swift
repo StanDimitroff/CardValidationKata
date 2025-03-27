@@ -12,16 +12,13 @@ extension ValidateCardTypeView {
   struct Content: View {
     private let cardNumber: Binding<String>
     private let cardType: String
-    private let validateCardType: () -> Void
 
     init(
       cardNumber: Binding<String>,
-      cardType: String,
-      validateCardType: @escaping () -> Void = {}
+      cardType: String
     ) {
       self.cardNumber = cardNumber
       self.cardType = cardType
-      self.validateCardType = validateCardType
     }
 
     var body: some View {
@@ -32,7 +29,6 @@ extension ValidateCardTypeView {
             .keyboardType(.numberPad)
           Text(cardType)
         }
-        Button("Validate", action: validateCardType)
       }
       .padding()
     }

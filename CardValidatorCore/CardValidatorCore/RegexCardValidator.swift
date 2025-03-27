@@ -19,7 +19,7 @@ public final class RegexCardValidator: CardValidator {
     let range = NSRange(location: 0, length: cardNumber.utf16.count)
 
     let matchedCardType = CardType.allCases.first { type in
-      guard let pattern = type.regexPattern else { return false }
+      guard let pattern = type.eagerRegexPattern else { return false }
       let expression = try? NSRegularExpression(pattern: pattern)
 
       return expression?.firstMatch(in: cardNumber, options: [], range: range) != nil

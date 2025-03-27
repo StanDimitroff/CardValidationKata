@@ -14,18 +14,29 @@ public enum CardType: CaseIterable {
   case mastercard
   case visa
 
-  public var regexPattern: String? {
+  public var eagerRegexPattern: String? {
     switch self {
     case .unknown:
       return nil
     case .americanExpress:
-      return "^3[47]\\d{13}$"
+      return "^3[47]"
     case .discover:
-      return "^65[0-9]{14}|64[4-9][0-9]{13}|6011[0-9]{12}|(622(?:12[6-9]|1[3-9][0-9]|[2-8][0-9][0-9]|9[01][0-9]|92[0-5])[0-9]{10})$"
+      return "^65|64[4-9]|6011|(622(?:12[6-9]|1[3-9]|[2-8]|9[01]|92[0-5]))"
     case .mastercard:
-      return "^(5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)\\d{12}$"
+      return "^(2[3-7]|22[2-9]|5[1-5])"
     case .visa:
-      return "^4\\d{12}(\\d{3}|\\d{6})?$"
+      return "^4"
+    }
+  }
+
+  var maxCardLength: Int {
+    switch self {
+    case .americanExpress:
+      return 15
+    case .discover, .mastercard, .visa:
+      return 16
+    case .unknown:
+      return 19
     }
   }
 }
