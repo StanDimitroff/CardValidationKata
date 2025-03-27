@@ -36,9 +36,18 @@ final class ValidateCardTypeViewModelTests: XCTestCase {
     let (sut, useCase) = makeSUT()
 
     useCase.stub(error: anyNSError(), cardType: nil)
-    sut.cardNumber = invalidCardNumber()
+    sut.cardNumber = anyCardNumber()
 
     XCTAssertNotNil(sut.validationError)
+  }
+
+  func test_updateCardNumber_updatesCardTypeOnUseCaseCardTypeRetrieval() throws {
+    let (sut, useCase) = makeSUT()
+
+    useCase.stub(error: nil, cardType: anyCardType())
+    sut.cardNumber = anyCardNumber()
+
+    XCTAssertNotNil(sut.cardType)
   }
 
   private func makeSUT() -> (sut: ValidateCardTypeViewModel, useCase: CardTypeUseCaseStub) {
@@ -68,11 +77,11 @@ final class ValidateCardTypeViewModelTests: XCTestCase {
         throw error
       }
 
+      if let cardType = stub?.cardType {
+        return cardType
+      }
+
       return .unknown
     }
-  }
-
-  private func invalidCardNumber() -> String {
-    "invalid card number"
   }
 }
