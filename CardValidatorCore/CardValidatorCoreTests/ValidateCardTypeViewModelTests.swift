@@ -44,10 +44,14 @@ final class ValidateCardTypeViewModelTests: XCTestCase {
   func test_updateCardNumber_updatesCardTypeOnUseCaseCardTypeRetrieval() throws {
     let (sut, useCase) = makeSUT()
 
-    useCase.stub(error: nil, cardType: anyCardType())
-    sut.cardNumber = anyCardNumber()
+    let cardTypes = CardType.allCases
 
-    XCTAssertNotNil(sut.cardType)
+    for type in cardTypes {
+      useCase.stub(error: nil, cardType: type)
+      sut.cardNumber = anyCardNumber()
+
+      XCTAssertNotNil(sut.cardType)
+    }
   }
 
   private func makeSUT() -> (sut: ValidateCardTypeViewModel, useCase: CardTypeUseCaseStub) {
