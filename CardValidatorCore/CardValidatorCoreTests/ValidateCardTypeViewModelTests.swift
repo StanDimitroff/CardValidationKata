@@ -16,7 +16,7 @@ final class ValidateCardTypeViewModelTests: XCTestCase {
     XCTAssertEqual(useCase.getCardTypeCallCount, 0)
   }
 
-  func test_updateCardNumber_requestsGetCardTypeEmptyCardNumber() throws {
+  func test_updateCardNumber_doesNotRequestGetCardTypeOnEmptyCardNumber() throws {
     let (sut, useCase) = makeSUT()
 
     sut.cardNumber = ""
