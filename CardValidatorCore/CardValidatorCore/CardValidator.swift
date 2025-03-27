@@ -11,7 +11,19 @@ public protocol CardValidator {
   func validate(cardNumber: String) throws -> CardType
 }
 
-public enum CardValidatorError: Error {
+public enum CardValidatorError: LocalizedError {
   case missingCardNumber
   case invalidCharacters
+  case invalidCardNumberLenght
+
+  public var errorDescription: String? {
+    switch self {
+    case .missingCardNumber:
+      return "Missing card number"
+    case .invalidCharacters:
+      return "Only digit are allowed"
+    case .invalidCardNumberLenght:
+      return "The number is invalid for this card type"
+    }
+  }
 }

@@ -27,7 +27,9 @@ public final class RegexCardValidator: CardValidator {
 
     guard let matchedCardType else { return .unknown }
 
-    return isCardNumberWithinCardTypeLimit(cardNumber, for: matchedCardType) ? matchedCardType : .unknown
+    if isCardNumberWithinCardTypeLimit(cardNumber, for: matchedCardType) { return matchedCardType }
+
+    throw CardValidatorError.invalidCardNumberLenght
   }
 
   private func containsDigitsOnly(in string: String) -> Bool {

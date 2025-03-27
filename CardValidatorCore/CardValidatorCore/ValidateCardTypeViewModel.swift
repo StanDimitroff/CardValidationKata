@@ -33,6 +33,7 @@ public final class ValidateCardTypeViewModel {
 
     do {
       let cardType = try useCase.getCardType(checking: cardNumber)
+      self.validationError = nil
       self.cardType = cardType.toPresentationModel()
     } catch {
       self.validationError = error

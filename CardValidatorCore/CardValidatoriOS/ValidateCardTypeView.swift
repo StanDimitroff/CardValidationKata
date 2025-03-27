@@ -19,7 +19,8 @@ public struct ValidateCardTypeView: View {
   public var body: some View {
     Content(
       cardNumber: $viewModel.cardNumber,
-      cardType: viewModel.cardType?.imageName ?? ""
+      cardType: viewModel.cardType?.imageName ?? "",
+      errorText: viewModel.validationError?.localizedDescription
     )
   }
 }

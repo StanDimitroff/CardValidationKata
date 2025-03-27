@@ -12,21 +12,32 @@ extension ValidateCardTypeView {
   struct Content: View {
     private let cardNumber: Binding<String>
     private let cardType: String
+    private let errorText: String?
 
     init(
       cardNumber: Binding<String>,
-      cardType: String
+      cardType: String,
+      errorText: String?
     ) {
       self.cardNumber = cardNumber
       self.cardType = cardType
+      self.errorText = errorText
     }
 
     var body: some View {
       VStack(alignment: .leading, spacing: 16) {
-        HStack {
-          TextField("", text: cardNumber, prompt: Text("Type your card number"))
-            .textFieldStyle(.roundedBorder)
-            .keyboardType(.numberPad)
+        HStack(alignment: .top) {
+          VStack(alignment: .leading, spacing: 8) {
+            TextField("", text: cardNumber, prompt: Text("Type your card number"))
+              .textFieldStyle(.roundedBorder)
+              .keyboardType(.numberPad)
+
+            if let errorText {
+              Text(errorText)
+                .font(.footnote)
+                .foregroundStyle(.red)
+            }
+          }
 
           Image(cardType, bundle: Bundle(identifier: "com.getset.CardValidatoriOS"))
             .frame(width: 67, height: 43)
@@ -48,6 +59,7 @@ extension ValidateCardTypeView {
 #Preview {
   ValidateCardTypeView.Content(
     cardNumber: .constant("1234"),
-    cardType: "discover"
+    cardType: "discover",
+    errorText: "Invalid Card lenght"
   )
 }
