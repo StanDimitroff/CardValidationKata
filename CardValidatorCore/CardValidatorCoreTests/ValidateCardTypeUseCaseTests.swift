@@ -15,8 +15,18 @@ final class ValidateCardTypeUseCaseTests: XCTestCase {
 
     validator.stub(error: anyNSError(), cardType: nil)
 
-    XCTAssertThrowsError(try sut.getCardType(checking: ""))
+    XCTAssertThrowsError(try sut.getCardType(checking: anyCardNumber()))
   }
+
+  func test_getCardType_doesNotThrowErrorOnCardValidatorSuccess() {
+    let (sut, validator) = makeSUT()
+
+    validator.stub(error: nil, cardType: nil)
+
+    XCTAssertNoThrow(try sut.getCardType(checking: anyCardNumber()))
+  }
+
+
 
   private func makeSUT() -> (sut: ValidateCardTypeUseCase, validator: CardValidatorStub)  {
     let cardValidator = CardValidatorStub()
