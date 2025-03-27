@@ -62,7 +62,7 @@ final class RegexCardValidatorTests: XCTestCase {
     let amexType = try sut.validate(cardNumber: "345678901234564")
     XCTAssertEqual(amexType, .americanExpress)
 
-    let discoverType = try sut.validate(cardNumber: "6011201559638046790")
+    let discoverType = try sut.validate(cardNumber: "6011201559638046")
     XCTAssertEqual(discoverType, .discover)
 
     let mastercardType = try sut.validate(cardNumber: "5436031030606378")

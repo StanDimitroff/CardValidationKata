@@ -25,10 +25,16 @@ public final class RegexCardValidator: CardValidator {
       return expression?.firstMatch(in: cardNumber, options: [], range: range) != nil
     }
 
-    return matchedCardType ?? .unknown
+    guard let matchedCardType else { return .unknown }
+
+    return isCardNumberWithinCardTypeLimit(cardNumber, for: matchedCardType) ? matchedCardType : .unknown
   }
 
   private func containsDigitsOnly(in string: String) -> Bool {
     CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string))
+  }
+
+  private func isCardNumberWithinCardTypeLimit(_ cardNumber: String, for type: CardType) -> Bool {
+    return cardNumber.count <= type.maxCardNumberLength
   }
 }

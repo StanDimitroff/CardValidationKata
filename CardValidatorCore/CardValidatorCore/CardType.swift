@@ -14,7 +14,7 @@ public enum CardType: CaseIterable {
   case mastercard
   case visa
 
-  public var eagerRegexPattern: String? {
+  var eagerRegexPattern: String? {
     switch self {
     case .unknown:
       return nil
@@ -29,7 +29,7 @@ public enum CardType: CaseIterable {
     }
   }
 
-  var maxCardLength: Int {
+  var maxCardNumberLength: Int {
     switch self {
     case .americanExpress:
       return 15
