@@ -40,6 +40,20 @@ final class RegexCardValidatorTests: XCTestCase {
     XCTAssertEqual(validationError, CardValidatorError.invalidCharacters)
   }
 
+  func test_validate_throwsInvalidCardNumberLenghtErrorOnTooLongCardNumber() {
+    let sut = makeSUT()
+
+    var validationError: CardValidatorError?
+
+    do {
+      try _ = sut.validate(cardNumber: "454347400224999600000")
+    } catch {
+      validationError = error as? CardValidatorError
+    }
+
+    XCTAssertEqual(validationError, CardValidatorError.invalidCardNumberLenght)
+  }
+
   // MARK: - Happy path
 
   func test_validate_doesNotThrowErrorOnValidationSuccess() {
