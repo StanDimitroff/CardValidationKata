@@ -39,27 +39,27 @@ public final class ValidateCardTypeViewModel {
 }
 
 public struct CardTypePresentationModel {
-  public let name: String
+  public let imageName: String
 }
 
 private extension CardType {
   func toPresentationModel() -> CardTypePresentationModel {
-    let nameTransformer: (CardType) -> String = { cardType in
+    let imageNameTransformer: (CardType) -> String = { cardType in
       switch cardType {
       case .unknown:
         return "Unknown"
       case .americanExpress:
-        return "American Express"
+        return "amex"
       case .discover:
-        return "Discover"
+        return "discover"
       case .mastercard:
-        return "MasterCard"
+        return "mastercard"
       case .visa:
-        return "Visa"
+        return "visa"
       }
     }
 
-    return CardTypePresentationModel(name: nameTransformer(self))
+    return CardTypePresentationModel(imageName: imageNameTransformer(self))
   }
 }
 

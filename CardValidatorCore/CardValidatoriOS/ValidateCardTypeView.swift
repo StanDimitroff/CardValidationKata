@@ -19,7 +19,7 @@ public struct ValidateCardTypeView: View {
   public var body: some View {
     Content(
       cardNumber: $viewModel.cardNumber,
-      cardType: viewModel.cardType?.name ?? ""
+      cardType: viewModel.cardType?.imageName ?? ""
     )
   }
 }

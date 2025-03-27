@@ -19,6 +19,7 @@
 		440BC2F22D946C59000DEA5D /* ValidateCardTypeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2F12D946C59000DEA5D /* ValidateCardTypeViewModel.swift */; };
 		440BC2F42D946D7A000DEA5D /* CardValidatorCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 440BC2C02D943821000DEA5D /* CardValidatorCore.framework */; };
 		440BC2FA2D946F2D000DEA5D /* ValidateCardTypeView.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC2F92D946F2D000DEA5D /* ValidateCardTypeView.Content.swift */; };
+		440BC3352D956253000DEA5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 440BC3342D956253000DEA5D /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		440BC2EF2D946BA8000DEA5D /* ValidateCardTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCardTypeView.swift; sourceTree = "<group>"; };
 		440BC2F12D946C59000DEA5D /* ValidateCardTypeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCardTypeViewModel.swift; sourceTree = "<group>"; };
 		440BC2F92D946F2D000DEA5D /* ValidateCardTypeView.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCardTypeView.Content.swift; sourceTree = "<group>"; };
+		440BC3342D956253000DEA5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				440BC2EA2D946B76000DEA5D /* CardValidatoriOS.h */,
 				440BC2EF2D946BA8000DEA5D /* ValidateCardTypeView.swift */,
 				440BC2F92D946F2D000DEA5D /* ValidateCardTypeView.Content.swift */,
+				440BC3342D956253000DEA5D /* Images.xcassets */,
 			);
 			path = CardValidatoriOS;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				440BC3352D956253000DEA5D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

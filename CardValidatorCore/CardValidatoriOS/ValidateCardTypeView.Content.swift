@@ -25,12 +25,22 @@ extension ValidateCardTypeView {
       VStack(alignment: .leading, spacing: 16) {
         HStack {
           TextField("", text: cardNumber, prompt: Text("Type your card number"))
-            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .textFieldStyle(.roundedBorder)
             .keyboardType(.numberPad)
-          Text(cardType)
+
+          Image(cardType, bundle: Bundle(identifier: "com.getset.CardValidatoriOS"))
+            .frame(width: 67, height: 43)
+
+            .background(
+              RoundedRectangle(cornerRadius: 8, style: .continuous)
+                .fill(.white)
+            )
+            .overlay(
+              RoundedRectangle(cornerRadius: 8).stroke(.black, lineWidth: 1)
+            )
         }
+        .padding()
       }
-      .padding()
     }
   }
 }
@@ -38,6 +48,6 @@ extension ValidateCardTypeView {
 #Preview {
   ValidateCardTypeView.Content(
     cardNumber: .constant("1234"),
-    cardType: "Visa"
+    cardType: "discover"
   )
 }
