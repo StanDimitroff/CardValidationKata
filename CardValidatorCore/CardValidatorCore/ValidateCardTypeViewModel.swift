@@ -24,6 +24,11 @@ public final class ValidateCardTypeViewModel {
   }
 
   private func validateCardType() {
+    guard !cardNumber.isEmpty else {
+      cardType = nil
+      return
+    }
+
     do {
       let cardType = try useCase.getCardType(checking: cardNumber)
       self.cardType = cardType.toPresentationModel()
