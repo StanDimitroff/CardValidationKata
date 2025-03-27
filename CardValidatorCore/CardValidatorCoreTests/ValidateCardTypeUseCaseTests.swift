@@ -16,6 +16,14 @@ final class ValidateCardTypeUseCaseTests: XCTestCase {
     XCTAssertEqual(validator.validateCallCount, 0)
   }
 
+  func test_getCardType_requestsCardTypeValidation() throws {
+    let (_, validator) = makeSUT()
+
+    _ = try validator.validate(cardNumber: anyCardNumber())
+
+    XCTAssertEqual(validator.validateCallCount, 1)
+  }
+
   func test_getCardType_throwsErrorCardValidatorError() {
     let (sut, validator) = makeSUT()
 
@@ -60,7 +68,7 @@ final class ValidateCardTypeUseCaseTests: XCTestCase {
 
     private(set) var validateCallCount = 0
     private(set) var stub: Stub?
-
+    
     func stub(error: Error?, cardType: CardType?) {
       stub = Stub(error: error, cardType: cardType)
     }
