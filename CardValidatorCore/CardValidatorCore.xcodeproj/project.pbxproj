@@ -116,8 +116,8 @@
 		440BC2C22D943821000DEA5D /* CardValidatorCore */ = {
 			isa = PBXGroup;
 			children = (
-				440BC2DA2D94398E000DEA5D /* CardValidator.swift */,
 				440BC2C32D943821000DEA5D /* CardValidatorCore.h */,
+				440BC2DA2D94398E000DEA5D /* CardValidator.swift */,
 				440BC2D82D94388E000DEA5D /* CardType.swift */,
 				440BC2DC2D943BD8000DEA5D /* RegexCardValidator.swift */,
 				440BC2E12D9469C7000DEA5D /* ValidateCardTypeUseCase.swift */,

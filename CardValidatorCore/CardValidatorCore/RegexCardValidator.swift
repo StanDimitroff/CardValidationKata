@@ -12,9 +12,7 @@ public final class RegexCardValidator: CardValidator {
   public init() {}
 
   public func validateCardType(checking cardNumber: String) throws -> CardType {
-    guard cardNumber.isEmpty == false else { throw CardValidatorError.missingCardNumber }
-
-    guard containsDigitsOnly(in: cardNumber) else { throw CardValidatorError.invalidCharacters }
+    try validate(cardNumber)
 
     let range = NSRange(location: 0, length: cardNumber.utf16.count)
 
@@ -27,16 +25,21 @@ public final class RegexCardValidator: CardValidator {
 
     guard let matchedCardType else { return .unknown }
 
-    if isCardNumberWithinCardTypeLimit(cardNumber, for: matchedCardType) { return matchedCardType }
+    if isCardNumberWithinCardTypeLenghtLimit(cardNumber, for: matchedCardType) { return matchedCardType }
 
     throw CardValidatorError.invalidCardNumberLenght
+  }
+
+  private func validate(_ cardNumber: String) throws {
+    guard !cardNumber.isEmpty else { throw CardValidatorError.missingCardNumber }
+    guard containsDigitsOnly(in: cardNumber) else { throw CardValidatorError.invalidCharacters }
   }
 
   private func containsDigitsOnly(in string: String) -> Bool {
     CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string))
   }
 
-  private func isCardNumberWithinCardTypeLimit(_ cardNumber: String, for type: CardType) -> Bool {
+  private func isCardNumberWithinCardTypeLenghtLimit(_ cardNumber: String, for type: CardType) -> Bool {
     return cardNumber.count <= type.maxCardNumberLength
   }
 }
