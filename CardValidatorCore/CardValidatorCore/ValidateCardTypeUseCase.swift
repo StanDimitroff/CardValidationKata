@@ -16,6 +16,6 @@ public final class ValidateCardTypeUseCase: CardTypeUseCase {
   }
 
   public func getCardType(checking cardNumber: String) throws -> CardType {
-    try cardValidator.validate(cardNumber: cardNumber)
+    try cardValidator.validateCardType(checking: cardNumber)
   }
 }

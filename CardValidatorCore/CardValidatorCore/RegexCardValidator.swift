@@ -11,7 +11,7 @@ public final class RegexCardValidator: CardValidator {
 
   public init() {}
 
-  public func validate(cardNumber: String) throws -> CardType {
+  public func validateCardType(checking cardNumber: String) throws -> CardType {
     guard cardNumber.isEmpty == false else { throw CardValidatorError.missingCardNumber }
 
     guard containsDigitsOnly(in: cardNumber) else { throw CardValidatorError.invalidCharacters }

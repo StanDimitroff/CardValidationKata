@@ -73,7 +73,7 @@ final class ValidateCardTypeUseCaseTests: XCTestCase {
       stub = Stub(error: error, cardType: cardType)
     }
 
-    func validate(cardNumber: String) throws -> CardType {
+    func validateCardType(checking cardNumber: String) throws -> CardType {
       validateCallCount += 1
 
       if let error = stub?.error {

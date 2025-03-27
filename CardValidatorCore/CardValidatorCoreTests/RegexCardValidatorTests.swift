@@ -18,7 +18,7 @@ final class RegexCardValidatorTests: XCTestCase {
     var validationError: CardValidatorError?
 
     do {
-      try _ = sut.validate(cardNumber: "")
+      try _ = sut.validateCardType(checking: "")
     } catch {
       validationError = error as? CardValidatorError
     }
@@ -32,7 +32,7 @@ final class RegexCardValidatorTests: XCTestCase {
     var validationError: CardValidatorError?
 
     do {
-      try _ = sut.validate(cardNumber: "no-digit card number")
+      try _ = sut.validateCardType(checking: "no-digit card number")
     } catch {
       validationError = error as? CardValidatorError
     }
@@ -46,7 +46,7 @@ final class RegexCardValidatorTests: XCTestCase {
     var validationError: CardValidatorError?
 
     do {
-      try _ = sut.validate(cardNumber: "454347400224999600000")
+      try _ = sut.validateCardType(checking: "454347400224999600000")
     } catch {
       validationError = error as? CardValidatorError
     }
@@ -59,13 +59,13 @@ final class RegexCardValidatorTests: XCTestCase {
   func test_validate_doesNotThrowErrorOnValidationSuccess() {
     let sut = makeSUT()
 
-    XCTAssertNoThrow(try sut.validate(cardNumber: "4543474002249996"))
+    XCTAssertNoThrow(try sut.validateCardType(checking: "4543474002249996"))
   }
 
   func test_validate_returnsUnknownCardTypeOnCardNumberWithNotDefinedCardType() {
     let sut = makeSUT()
 
-    let cardType = try? sut.validate(cardNumber: "111111111111")
+    let cardType = try? sut.validateCardType(checking: "111111111111")
 
     XCTAssertEqual(cardType, .unknown)
   }
@@ -73,16 +73,16 @@ final class RegexCardValidatorTests: XCTestCase {
   func test_validate_returnsValidCardTypeOnValidCardNumber() throws {
     let sut = makeSUT()
 
-    let amexType = try sut.validate(cardNumber: "345678901234564")
+    let amexType = try sut.validateCardType(checking: "345678901234564")
     XCTAssertEqual(amexType, .americanExpress)
 
-    let discoverType = try sut.validate(cardNumber: "6011201559638046")
+    let discoverType = try sut.validateCardType(checking: "6011201559638046")
     XCTAssertEqual(discoverType, .discover)
 
-    let mastercardType = try sut.validate(cardNumber: "5436031030606378")
+    let mastercardType = try sut.validateCardType(checking: "5436031030606378")
     XCTAssertEqual(mastercardType, .mastercard)
 
-    let visaType = try sut.validate(cardNumber: "4916301720257093")
+    let visaType = try sut.validateCardType(checking: "4916301720257093")
     XCTAssertEqual(visaType, .visa)
   }
 
