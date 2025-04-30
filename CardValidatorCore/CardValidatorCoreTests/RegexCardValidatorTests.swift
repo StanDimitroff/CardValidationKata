@@ -32,7 +32,7 @@ final class RegexCardValidatorTests: XCTestCase {
     var validationError: CardValidatorError?
 
     do {
-      try _ = sut.validateCardType(checking: "no-digit card number")
+      try _ = sut.validateCardType(checking: "non-digit card number")
     } catch {
       validationError = error as? CardValidatorError
     }

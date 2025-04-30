@@ -24,6 +24,7 @@
 		440BC3392D957D9E000DEA5D /* CardTypeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC3382D957D9E000DEA5D /* CardTypeUseCase.swift */; };
 		440BC33B2D957E4E000DEA5D /* ValidateCardTypeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC33A2D957E4E000DEA5D /* ValidateCardTypeViewModelTests.swift */; };
 		440BC33E2D958207000DEA5D /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440BC33D2D958207000DEA5D /* SharedTestHelpers.swift */; };
+		44C1380A2DA4072000DAD6FB /* CardValidatingIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C138092DA4072000DAD6FB /* CardValidatingIntegrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		440BC3382D957D9E000DEA5D /* CardTypeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypeUseCase.swift; sourceTree = "<group>"; };
 		440BC33A2D957E4E000DEA5D /* ValidateCardTypeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateCardTypeViewModelTests.swift; sourceTree = "<group>"; };
 		440BC33D2D958207000DEA5D /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
+		44C138092DA4072000DAD6FB /* CardValidatingIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidatingIntegrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				440BC3362D956B41000DEA5D /* ValidateCardTypeUseCaseTests.swift */,
 				440BC33A2D957E4E000DEA5D /* ValidateCardTypeViewModelTests.swift */,
 				440BC2DE2D943C45000DEA5D /* CardValidatorCoreTests-Bridging-Header.h */,
+				44C138092DA4072000DAD6FB /* CardValidatingIntegrationTests.swift */,
 			);
 			path = CardValidatorCoreTests;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C1380A2DA4072000DAD6FB /* CardValidatingIntegrationTests.swift in Sources */,
 				440BC33E2D958207000DEA5D /* SharedTestHelpers.swift in Sources */,
 				440BC33B2D957E4E000DEA5D /* ValidateCardTypeViewModelTests.swift in Sources */,
 				440BC2E02D943C46000DEA5D /* RegexCardValidatorTests.swift in Sources */,
